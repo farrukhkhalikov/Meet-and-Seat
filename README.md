@@ -33,6 +33,7 @@ Simply share your Facebook or LinkedIn profile details to check other participat
 
 ###### Link to my trello board: --[Trello](https://trello.com/b/AHPbSlEh/meet-and-seat)
 ###### Link to my ERD: --[Imgur](https://imgur.com/TBTyDiq)  [Imgur](https://imgur.com/TjreyTc)
+###### Link to my GitHub: -- [GitHub](https://github.com/farrukhkhalikov/Meet-and-Seat/tree/master)
 
 ![KLM Logo](https://www.unibaggage.com/shipping/wp-content/uploads/2017/06/KLM-Airlines-Logo-300x141.jpg)
 Meet and Seat is a feature already in use by KLM (Royal Dutch Airlines) and I am trying to rebuild it (not entirelly) in my app so that local users can also benefit from this awesome service! 
