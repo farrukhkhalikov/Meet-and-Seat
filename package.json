@@ -3,17 +3,33 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
-    "body-parser": "~1.18.2",
+    "body-parser": "^1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^5.0.0",
     "express": "~4.15.5",
-    "hbs": "~4.0.1",
+    "hbs": "^4.0.1",
+    "method-override": "^2.3.10",
     "mongoose": "^5.0.6",
     "morgan": "~1.9.0",
+    "nodemon": "^1.15.1",
     "serve-favicon": "~2.4.5"
-  }
+  },
+  "description": "![My Logo](https://i.amz.mshcdn.com/msBCKp18EAunDmt0h-OSbmp1Rqg=/950x534/filters:quality(90)/2014%2F04%2F18%2F8c%2Fklmklm.72df8.jpg)",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farrukhkhalikov/Meet-and-Seat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farrukhkhalikov/Meet-and-Seat/issues"
+  },
+  "homepage": "https://github.com/farrukhkhalikov/Meet-and-Seat#readme"
 }
