@@ -23,7 +23,7 @@ router.get('/new', (req, res) => {
 ///create route
 router.post('/', (req, res) => {
     const newUser = new User({
-        username: req.body.username,
+        first_name: req.body.first_name,
         email: req.body.email,        
     })
     newUser.save().then((savedUser) => {
@@ -54,7 +54,7 @@ router.get('/:id/edit', (req, res) => {
 ///update route
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
-      username: req.body.username,
+      first_name: req.body.first_name,
       email: req.body.email,
   }, {new: true}).then((updateUser) => {
       res.redirect(`/users/${updateUser.id}`)
@@ -62,11 +62,16 @@ router.put('/:id', (req, res) => {
 })
 
 //user delete
-router.delete('/:id', (req, res) => {
-   User.findByIdAndRemove(req.params.id).then(() => {
-       res.redirect('/users')
-   })
-})
+router.get('/:id/delete', (request, response) => {
+
+    const userIdToDelete = request.params.id;
+  
+    User.findByIdAndRemove(userIdToDelete).then(() => {
+      console.log(`Successfully deleted user with ID ${userIdToDelete}!`);
+  
+      response.redirect('/users');
+    });
+  });
 
 
 module.exports = router
