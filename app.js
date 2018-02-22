@@ -8,9 +8,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
-var index = require('./routes/index');
-var users = require('./routes/users');
-var routeController = require('./controllers/routeController')
+var userController = require('./controllers/userController')
+var index = require('./controllers/index')
 var app = express();
 
 // view engine setup
@@ -27,8 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use( methodOverride('_method'));
 
 app.use('/', index);
-app.use('/users', users);
-app.use('/user', routeController)
+app.use('/users', userController)
 
 
 var db = mongoose.connection

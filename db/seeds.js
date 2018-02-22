@@ -4,7 +4,7 @@ var User = require('../models/user')
 var Item = require('../models/item')
 
 // items here
-const apple = new Item ({
+const apple = new Item({
     name: "apple"
 })
 
@@ -21,14 +21,15 @@ var steve = new User({
     items: []
 })
 
-User.remove().then(() =>{
-    return ryan.save()
-})
-.then(() => {
-    return steve.save()
-})
-.then(() => {
-    console.log('everyone is saved')
-}).catch((err) => {
-    console.log(err)
-})
+User.remove().then(() => {
+        return ryan.save()
+    })
+    .then((savedRyan) => {
+        console.log(savedRyan)
+        return steve.save()
+    })
+    .then(() => {
+        console.log('everyone is saved')
+    }).catch((err) => {
+        console.log(err)
+    })

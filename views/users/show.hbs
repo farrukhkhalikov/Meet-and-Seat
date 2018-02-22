@@ -1,19 +1,19 @@
-<h1>User {{user._id}}</h1>
+<h1>User {{user.first_name}}</h1>
 
 <div>Name: {{user.first_name}}</div>
 <div>Email: {{user.email}}</div>
 
 <h2>{{user.first_name}}'s Items</h2>
-{{#each userItems}}
+{{#each user}}
     <div>
-        {{this.name}}
-        <a href="/users/{{../user._id}}/items/{{this._id}}">Show Item</a>
+        {{name}}
+        {{!-- <a href="/users/{{_id}}/items/{{_id}}">Show Item</a> --}}
     </div>
 {{/each}}
 
 <div>
-    <a href="/users/{{user._id}}/delete">Delete</a>
-    <a href="/users/{{user._id}}/edit">Edit</a>
+    <a href="/users/{{user.id}}/delete">Delete</a>
+    <a href="/users/{{user.id}}/edit">Edit</a>
 </div>
 <br>
 <div>

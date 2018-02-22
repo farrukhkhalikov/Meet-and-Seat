@@ -1,6 +1,6 @@
-var ItemSchema = require('../db/schema')
+var schema = require('../db/schema')
 var mongoose = require('mongoose')
-var Item = mongoose.model('Item', ItemSchema)
+var Item = mongoose.model('Item', schema.ItemSchema)
 
 
 module.exports = Item

@@ -6,42 +6,56 @@ var User = require('../models/user')
 ///index route
 router.get('/', (req, res) => {
  User.find().then((users) => {
-     res.render('user/index', {
+     res.render('users/index', {
          users: users
      })
  })
 })
 
-/// show route
-router.get('/:id', (req, res) => {
-  User.findById(req.params.id).then((user) => {
-      res.render('user/show', {
-          user: user
-      })
-  }) 
-})
+
 
 
 //new route
 router.get('/new', (req, res) => {
-    res.render('user/new')
+    res.render('users/new')
 })
 
 ///create route
 router.post('/', (req, res) => {
-    var info = req.body
+    const newUser = new User({
+        username: req.body.username,
+        email: req.body.email,        
+    })
+    newUser.save().then((savedUser) => {
+        res.redirect(`/users/${savedUser.id}`)
+    })
 })
 
+
+/// show route
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id).then((user) => {
+        res.render('users/show', {
+            user: user
+        })
+    }) 
+  })
+
+// edit route
+router.get('/:id/edit', (req, res) => {
+    User.findById(req.params.id).then((user) => {
+        res.render('users/edit', {
+            id: req.params.id,
+            user: user
+        })
+    })
+})
 
 ///update route
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, {
       username: req.body.username,
-      image: req.body.image,
       email: req.body.email,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      phonenumber: req.body.phonenumber
   }, {new: true}).then((updateUser) => {
       res.redirect(`/users/${updateUser.id}`)
   })

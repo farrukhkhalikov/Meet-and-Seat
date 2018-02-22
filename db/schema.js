@@ -1,6 +1,5 @@
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
-mongoose.Promise = global.Promise
 
 
 ///created schema for items
@@ -14,17 +13,10 @@ var UserSchema = new Schema({
         type: String,
         required: true
     },
-    items: [ ItemSchema ]
+    // items: [ ItemSchema ]
 })
 
-// UserSchema.pre('save', (next) => {
-//     var now = new Date()
-//     This.updated_at = now
-//     if(!this.created_at) {
-//         this.created_at = now
-//     }
-//     next()
-// })
+
 
 
 module.exports = {
