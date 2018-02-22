@@ -3,20 +3,22 @@ mongoose.connect('mongodb://localhost/API-practice')
 var User = require('../models/user')
 var Item = require('../models/item')
 
+// items here
+const apple = new Item ({
+    name: "apple"
+})
+
+// then add items to the arrays
 var ryan = new User({
     first_name: 'Ryan',
     email: 'ryan@gmail.com',
-    items: [{
-        name: 'do some chores!'
-    }]
+    items: [apple]
 })
 
 var steve = new User({
     first_name: 'Steve',
     email: 'steve@gmail.com',
-    items: [{
-        name: 'do something!'
-    }]
+    items: []
 })
 
 User.remove().then(() =>{
@@ -27,4 +29,6 @@ User.remove().then(() =>{
 })
 .then(() => {
     console.log('everyone is saved')
+}).catch((err) => {
+    console.log(err)
 })

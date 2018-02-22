@@ -10,24 +10,21 @@ var ItemSchema = new Schema({
 ///for user
 var UserSchema = new Schema({
     first_name: String,
-    email:{
+    email: {
         type: String,
-        required: true,
-        unique: true,
-        created_at: date,
-        updated_at: date,
-        items: [ ItemSchema ]
-    }
+        required: true
+    },
+    items: [ ItemSchema ]
 })
 
-UserSchema.pre('save', (next) => {
-    var now = new Date()
-    This.updated_at = now
-    if(!this.created_at) {
-        this.created_at = now
-    }
-    next()
-})
+// UserSchema.pre('save', (next) => {
+//     var now = new Date()
+//     This.updated_at = now
+//     if(!this.created_at) {
+//         this.created_at = now
+//     }
+//     next()
+// })
 
 
 module.exports = {

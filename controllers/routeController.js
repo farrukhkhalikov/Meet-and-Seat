@@ -9,12 +9,16 @@ router.get('/', (req, res) => {
 
 /// show route
 router.get('/:id', (req, res) => {
-    var id = req.params.id,
+    var id = req.params.id
 })
+
+
 ///create route
 router.post('/', (req, res) => {
     var info = req.body
 })
+
+
 ///update route
 router.put('/:id', (req, res) => {
 

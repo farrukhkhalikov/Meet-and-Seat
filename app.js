@@ -7,10 +7,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+var methodOverride = require('method-override')
 var index = require('./routes/index');
 var users = require('./routes/users');
-
+var routeController = require('./controllers/routeController')
 var app = express();
 
 // view engine setup
@@ -28,7 +28,7 @@ app.use( methodOverride('_method'));
 
 app.use('/', index);
 app.use('/users', users);
-app.use('/controllers', routeController)
+app.use('/user', routeController)
 
 
 var db = mongoose.connection
