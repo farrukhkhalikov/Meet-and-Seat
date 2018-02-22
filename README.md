@@ -37,5 +37,6 @@ Simply share your Facebook or LinkedIn profile details to check other participat
 ###### Link to my Wireframes: --[Figma](https://www.figma.com/file/bR1H0cjhe5NQmtsqXlQXd9fs/Meet-and-Seat!)
 ###### Link to my Heroku: --[Heroku](https://damp-retreat-64120.herokuapp.com)
 
+
 ![KLM Logo](https://www.unibaggage.com/shipping/wp-content/uploads/2017/06/KLM-Airlines-Logo-300x141.jpg)
 Meet and Seat is a feature already in use by KLM (Royal Dutch Airlines) and I am trying to rebuild it (not entirelly) in my app so that local users can also benefit from this awesome service! 
