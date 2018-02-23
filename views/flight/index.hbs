@@ -1,0 +1,14 @@
+<h1>Flights</h1>
+
+{{#each flights}}
+    <div>
+        <div>Name: {{this.name}}</div>
+        {{!-- --}}
+    
+        <a href="/flights/{{this._id}}">Show {{this.name}}</a>
+        {{!-- <a href="/flights/{{this._id}}/delete">Delete {{this.info}}</a> --}}
+        {{!-- <a href="/flights/{{this._id}}/edit">Edit {{this.name}}</a> --}}
+    </div>
+{{/each}}
+
+<div><a href="/flights">Create a new Flight</a></div>

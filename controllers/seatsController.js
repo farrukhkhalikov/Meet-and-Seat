@@ -1,9 +1,13 @@
 var express = require('express')
-var router = express.Router()
+var router = express.Router({
+    mergeParams: true
+})
+var Flight = require('../models/flight')
+var User = require('../models/user')
 var Seat = require('../models/seats')
 
-
-///index route
+///index route 
+// flight id
 router.get('/', (req, res) => {
     Seat.find().then((seats) => {
         res.render('seats/index', {
@@ -13,6 +17,7 @@ router.get('/', (req, res) => {
    })
 
    /// show route
+   //flight id and seat id
 router.get('/:id', (req, res) => {
     Seat.findById(req.params.id).then((user) => {
         res.render('seats/show', {

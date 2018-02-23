@@ -2,25 +2,9 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-///created schema for flights
-var FlightSchema = new Schema({
-    name: String,
-    info: String,
-    arrival: Number,
-    departure: Number
-})
-
-///for seats
-var flightSeats = new Schema({
-  id: Number,
-  user: String,
-  flight: Number,
-  seats: []
-})
-
 
 ///for user
-var UserSchema = new Schema({
+var userSchema = new Schema({
     first_name: String,
     last_name: String,
     flight: Number,
@@ -31,11 +15,25 @@ var UserSchema = new Schema({
     },
 })
 
+///for seats
+var seatSchema = new Schema({
+    row: String,
+    seat: [Number],
+    users: [userSchema]
+  })
 
+///created schema for flights
+var flightSchema = new Schema({
+    name: String,
+    info: String,
+    arrival: Number,
+    departure: Number,
+    seats: [seatSchema]
+})
 
 
 module.exports = {
-    UserSchema,
-    FlightSchema,
-    flightSeats
+    userSchema,
+    flightSchema,
+    seatSchema
 }

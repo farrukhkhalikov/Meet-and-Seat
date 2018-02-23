@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override')
 var userController = require('./controllers/userController')
 var flightController = require('./controllers/flightController')
+var seatsController = require('./controllers/seatsController')
 var index = require('./controllers/index')
 var app = express();
 
@@ -28,7 +29,8 @@ app.use( methodOverride('_method'));
 
 app.use('/', index);
 app.use('/users', userController)
-app.use('/users/flights', flightController)
+app.use('/flights', flightController)
+app.use('/flights/:flightId/seats', seatsController)
 
 
 var db = mongoose.connection

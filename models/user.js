@@ -1,6 +1,6 @@
-var schemas = require('../db/schema')
+var schema = require('../db/schema')
 var mongoose = require('mongoose')
-var User = mongoose.model('User', schemas.UserSchema)
+var User = mongoose.model('User', schema.userSchema)
 
 
 
