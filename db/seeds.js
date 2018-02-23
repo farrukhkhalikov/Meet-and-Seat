@@ -1,18 +1,18 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/API-practice')
 var User = require('../models/user')
-var Item = require('../models/item')
+var Flight = require('../models/item')
 
 // items here
-const apple = new Item({
-    name: "apple"
+const plane = new Flight({
+    name: "airbus"
 })
 
 // then add items to the arrays
 var ryan = new User({
     first_name: 'Ryan',
     email: 'ryan@gmail.com',
-    items: [apple]
+    items: [plane]
 })
 
 var steve = new User({

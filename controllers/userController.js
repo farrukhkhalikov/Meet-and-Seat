@@ -14,7 +14,6 @@ router.get('/', (req, res) => {
 
 
 
-
 //new route
 router.get('/new', (req, res) => {
     res.render('users/new')
