@@ -1,14 +1,14 @@
 <h1>Users</h1>
 
-{{#each users}}
+{{#each seats}}
     <div>
-        <div>Name: {{this.first_name}}</div>
-        <div>Email: {{this.email}}</div>
+        <div>Name: {{user}}</div>
+        <div>Email: {{id}}</div>
         
-        <a href="/users/{{this._id}}">Show {{this.first_name}}</a>
-        <a href="/users/{{this._id}}/delete">Delete {{this.first_name}}</a>
-        <a href="/users/{{this._id}}/edit">Edit {{this.first_name}}</a>
+        <a href="/seats/{{this._id}}">Show {{this.id}}</a>
+        <a href="/seats/{{this._id}}/delete">Delete {{this.flight}}</a>
+        <a href="/seats/{{this._id}}/edit">Edit {{this.user}}</a>
     </div>
 {{/each}}
 
-<div><a href="/users/new">Create a new User</a></div>
+<div><a href="/seats/new">Create a new User</a></div>

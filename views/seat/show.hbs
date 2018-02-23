@@ -1,21 +1,21 @@
-<h1>User {{user.first_name}}</h1>
+<h1>User {{seat.user}}</h1>
 
-<div>Name: {{user.first_name}}</div>
-<div>Email: {{user.email}}</div>
+<div>Name: {{sea.id}}</div>
+<div>Email: {{seat.id}}</div>
 
-<h2>{{user.first_name}}'s Items</h2>
-{{#each user}}
+<h2>{{seat.id}}'s Items</h2>
+{{#each seat}}
     <div>
-        {{name}}
-        {{!-- <a href="/users/{{_id}}/items/{{_id}}">Show Item</a> --}}
+        {{user}}
+        {{!-- <a href="/seats/{{_id}}/items/{{_id}}">Show Item</a> --}}
     </div>
 {{/each}}
 
 <div>
-    <a href="/users/{{user.id}}/delete">Delete</a>
-    <a href="/users/{{user.id}}/edit">Edit</a>
+    <a href="/seats/{{seat.id}}/delete">Delete</a>
+    <a href="/seats/{{seat.id}}/edit">Edit</a>
 </div>
 <br>
 <div>
-    <a href="/users">Back to Users</a>
+    <a href="/seats">Back to Users</a>
 </div>

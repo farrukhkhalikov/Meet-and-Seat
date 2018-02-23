@@ -1,45 +1,45 @@
 var express = require('express')
 var router = express.Router()
-var User = require('../models/user')
+var Seat = require('../models/seats')
 
 
 ///index route
 router.get('/', (req, res) => {
-    User.find().then((users) => {
-        res.render('users/index', {
-            users: users
+    Seat.find().then((seats) => {
+        res.render('seats/index', {
+            seats: seats
         })
     })
    })
 
    /// show route
 router.get('/:id', (req, res) => {
-    User.findById(req.params.id).then((user) => {
-        res.render('users/show', {
-            user: user
+    Seat.findById(req.params.id).then((user) => {
+        res.render('seats/show', {
+            seat: seat
         })
     }) 
   })
 
   ///update route
 router.put('/:id', (req, res) => {
-    User.findByIdAndUpdate(req.params.id, {
-        first_name: req.body.first_name,
-        email: req.body.email,
-    }, {new: true}).then((updateUser) => {
-        res.redirect(`/users/${updateUser.id}`)
+    Seat.findByIdAndUpdate(req.params.id, {
+        id: req.body.id,
+        user: req.body.user,
+    }, {new: true}).then((updateSeat) => {
+        res.redirect(`/seats/${updateSeat.id}`)
     })
   })
   
   //user delete
   router.get('/:id/delete', (request, response) => {
   
-      const userIdToDelete = request.params.id;
+      const seatIdToDelete = request.params.id;
     
-      User.findByIdAndRemove(userIdToDelete).then(() => {
-        console.log(`Successfully deleted user with ID ${userIdToDelete}!`);
+      Seat.findByIdAndRemove(seatIdToDelete).then(() => {
+        console.log(`Successfully deleted user with ID ${seatIdToDelete}!`);
     
-        response.redirect('/users');
+        response.redirect('/seats');
       });
     });
   
