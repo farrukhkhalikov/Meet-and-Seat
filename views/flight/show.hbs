@@ -1,9 +1,10 @@
 <h1>Cameron Gunter</h1>
 
-<h1>{{flight.name}}</h1>
-<p>{{flight.info}}</p>
-<p>{{flight.arrival}}</p>
-<p>{{flight.departure}}</p>
+<h1>Flight: {{flight.name}}</h1>
+<p>Destination: {{flight.info}}</p>
+<p>Arrival: {{flight.arrival}}</p>
+<p>Departure: {{flight.departure}}</p>
+
 {{!-- {{#each flights}}
     <div>
         {{!-- <div>Name: {{this.name}}</div> --}}
@@ -20,3 +21,4 @@
 {{/each}} --}} 
 
 {{!-- <div><a href="/flights">Create a new Flight</a></div> --}}
+<div><a href="/flights/{{flight._id}}/seats">Show Seats</a></div>

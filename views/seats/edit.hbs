@@ -1,7 +1,8 @@
-<h1>Edit User</h1>
+<h1>Edit Seats</h1>
 
 <form action="/seats/{{seat.id}}?_method=PUT" method="POST">
     {{!-- <input type="email" placeholder="email" name="email" value="{{user.email}}" required > --}}
-    <input type="text" name="first_name" placeholder="first name" value="{{seat.id}}">
+    {{!-- <input type="text" name="first_name" placeholder="first name" value="{{seat.id}}"> --}}
     <input type="submit" value="Update Seat">
 </form>
+<div><a href="flights/flightId/seats{{seat._id}}/seats">Edit Seats</a></div>

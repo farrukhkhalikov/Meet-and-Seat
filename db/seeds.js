@@ -5,7 +5,6 @@ var Flight = require('../models/flight')
 var Seats = require('../models/seats')
 
 
-
 var ryan = new User({
     first_name: 'Ryan',
     last_name: 'Sneider',
@@ -39,7 +38,27 @@ const flight = new Flight({
     departure: 0900,
     seats: [flightSeats]
 })
-
+const flight2 = new Flight({
+    name: "Delta",
+    info: "Frankfurt",
+    arrival: 1315,
+    departure: 1800,
+    seats: [flightSeats]
+})
+const flight3 = new Flight({
+    name: "British Airways",
+    info: "London",
+    arrival: 0930,
+    departure: 1700,
+    seats: [flightSeats]
+})
+const flight4 = new Flight({
+    name: "France Airways",
+    info: "Paris",
+    arrival: 1130,
+    departure: 2100,
+    seats: [flightSeats]
+})
 User.remove().then(() => {
     return Seats.remove().then(() => {
         return Flight.remove().then(() => {
@@ -47,7 +66,7 @@ User.remove().then(() => {
     })
 }).then(() => {
     console.log(flight)
-    flight.save().then(()=> {
+    Flight.insertMany([flight, flight2, flight3, flight4]).then(()=> {
         console.log('saved worked')
     })
 })

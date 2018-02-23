@@ -9,18 +9,24 @@ var Seat = require('../models/seats')
 ///index route 
 // flight id
 router.get('/', (req, res) => {
-    Seat.find().then((seats) => {
+    Flight.findById(req.params.flightId).then((flight) => {
+        var seats = flight.seats
         res.render('seats/index', {
+            flight: flight,
             seats: seats
         })
+    
+        })
     })
-   })
+
 
    /// show route
    //flight id and seat id
 router.get('/:id', (req, res) => {
+    Flight.findById(req.params.flightId).then((flight) => {
     Seat.findById(req.params.id).then((user) => {
         res.render('seats/show', {
+            flight: flight,
             seat: seat
         })
     }) 
@@ -28,16 +34,18 @@ router.get('/:id', (req, res) => {
 
   ///update route
 router.put('/:id', (req, res) => {
+    Flight.findById(req.params.flightId).then((flight) => {
     Seat.findByIdAndUpdate(req.params.id, {
-        id: req.body.id,
-        user: req.body.user,
+        flight: flight,
+        seat: seat
     }, {new: true}).then((updateSeat) => {
-        res.redirect(`/seats/${updateSeat.id}`)
+        res.redirect(`flights/flightsId/seats/${updateSeat.id}`)
     })
   })
   
   //user delete
   router.get('/:id/delete', (request, response) => {
+    Flight.findById(req.params.flightId).then((flight) => {
   
       const seatIdToDelete = request.params.id;
     
@@ -47,6 +55,8 @@ router.put('/:id', (req, res) => {
         response.redirect('/seats');
       });
     });
-  
-  
+})
+})
+})
+
   module.exports = router

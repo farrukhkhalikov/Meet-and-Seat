@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use( methodOverride('_method'));
 
 app.use('/', index);
-app.use('/users', userController)
+app.use('/flights/:flightId/seats/users', userController)
 app.use('/flights', flightController)
 app.use('/flights/:flightId/seats', seatsController)
 

@@ -1,0 +1,14 @@
+<h1>Cameron Gunter</h1>
+
+{{#each seats}}
+    <div>
+        <div>Name: {{first_name}}</div>
+        <div>Email: {{info}}</div>
+        
+        {{!-- <a href="/seats/{{this._id}}">Show {{this.id}}</a> --}}
+        {{!-- <a href="/seats/{{this._id}}/delete">Delete {{this.flight}}</a> --}}
+        {{!-- <a href="/seats/{{this._id}}/edit">Edit {{this.user}}</a> --}}
+    </div>
+{{/each}}
+
+<div><a href="/seats/update">Edit Seats</a></div>
