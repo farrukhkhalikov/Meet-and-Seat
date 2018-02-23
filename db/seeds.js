@@ -1,11 +1,22 @@
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost/API-practice')
 var User = require('../models/user')
-var Flight = require('../models/item')
+var Flight = require('../models/flight')
+var Seats = require('../models/seats')
 
 // items here
-const plane = new Flight({
-    name: "airbus"
+const flight = new Flight({
+    name: "KLM Dutch Royal Airlines",
+    info: "Amsterdam",
+    arrival: 14-45,
+    departure: 09-00
+})
+
+var seats = new Seats({
+  id: 5,
+  user: "Cameron Gunter",
+  flight: 0987,
+  seats: [1, 2, 3, 4, 5, 6, 7, 8, 9]
 })
 
 // then add items to the arrays
