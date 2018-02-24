@@ -1,6 +1,8 @@
-<h1>Cameron Gunter</h1>
+<h1>Seats</h1>
+<p>Name: {{name}}</p>
+<p>Seat: {{id}}</p>
 
-{{#each seats}}
+{{!-- {{#each seats}}
     <div>
         <div>Name: {{first_name}}</div>
         <div>Email: {{info}}</div>
@@ -8,7 +10,11 @@
         {{!-- <a href="/seats/{{this._id}}">Show {{this.id}}</a> --}}
         {{!-- <a href="/seats/{{this._id}}/delete">Delete {{this.flight}}</a> --}}
         {{!-- <a href="/seats/{{this._id}}/edit">Edit {{this.user}}</a> --}}
-    </div>
-{{/each}}
+    {{!-- </div>
+{{/each}} --}} 
 
-<div><a href="/seats/update">Edit Seats</a></div>
+{{!-- {{#each seats}} --}}
+{{!-- <div>{{_id}}<a href="/flights/{{../flight._id}}/seats/{{_id}}/edit">Edit Seats</a></div> --}}
+
+<div>{{_id}}<a href="./seats/{{_id}}/edit">Edit Seats</a></div>
+{{!-- {{/each}} --}}

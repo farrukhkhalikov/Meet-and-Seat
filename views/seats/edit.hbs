@@ -1,8 +1,27 @@
-<h1>Edit Seats</h1>
+<h1>Edit Soda</h1>
+<form method="POST" action="/flights/{{flightId}}/seats/{{seat._id}}?_method=PATCH">
+ {{!-- <div>
+    <label for="name">Name of Soda</label>
+    <input type="text" name="name" value="{{soda.name}}">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input type="text" name="price" value="{{soda.price}}">
+  </div>
+  <div>
+    <label for="packaging">Packaging</label>
+    <select name="packaging" selected="{{soda.packaging}}">
+      <option value="can">Can</option>
+      <option value="bottle">Bottle</option>
+    </select>
+  </div>
+  <div>
+    <label for="quantitySold">Quantity Sold</label>
+    <input type="text" name="quantitySold" value="{{soda.quantitySold}}">
+  </div> --}}
+  
+  <button type="submit">Edit</button>
+  
 
-<form action="/seats/{{seat.id}}?_method=PUT" method="POST">
-    {{!-- <input type="email" placeholder="email" name="email" value="{{user.email}}" required > --}}
-    {{!-- <input type="text" name="first_name" placeholder="first name" value="{{seat.id}}"> --}}
-    <input type="submit" value="Update Seat">
 </form>
-<div><a href="flights/flightId/seats{{seat._id}}/seats">Edit Seats</a></div>
+<a href="/flights/{{flightId}}/seats/{{seat._id}}">Go Back</a>
