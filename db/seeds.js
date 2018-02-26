@@ -54,7 +54,7 @@ const flight2 = new Flight({
 const flight3 = new Flight({
     name: "British Airways",
     info: "London",
-    img: "https://vignette.wikia.nocookie.net/logopedia/images/a/a3/British-airways-logo.jpg/revision/latest?cb=20150131170343",
+    img: "http://www.stickpng.com/assets/images/587b50af44060909aa603a7b.png",
     arrival: 0930,
     departure: 1700,
     seats: [flightSeats]
@@ -62,7 +62,7 @@ const flight3 = new Flight({
 const flight4 = new Flight({
     name: "France Airways",
     info: "Paris",
-    img: "https://s-media-cache-ak0.pinimg.com/originals/30/82/40/308240d64c83f2f17767b2c5127cb40b.jpg",
+    img: "https://us-res.france.fr/rwb/2015/site/img/af-skyteam.png",
     arrival: 1130,
     departure: 2100,
     seats: [flightSeats]

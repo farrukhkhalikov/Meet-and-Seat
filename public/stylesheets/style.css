@@ -1,17 +1,23 @@
+html {
+  background-image: url("https://content.delta.com/content/www/en_US/traveling-with-us/airports-and-aircraft/Aircraft.damAsset.20161209T1554207260500.html/content/dam/delta-tnt/homepage/hero/4/delta-plane-at-sunset-1600.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 body {
+  min-height: 100vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("https://content.delta.com/content/www/en_US/traveling-with-us/airports-and-aircraft/Aircraft.damAsset.20161209T1554207260500.html/content/dam/delta-tnt/homepage/hero/4/delta-plane-at-sunset-1600.jpg");
-  background-position: cover;
+  
 }
 
 a {
   color: #00B7FF;
 }
-body,html{
+/* body,html{
   height: 100%;
   
-}
+} */
 
 img {
   max-width: 300px;
