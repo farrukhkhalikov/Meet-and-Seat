@@ -4,11 +4,16 @@ html {
   background-repeat: no-repeat;
 }
 
+header {
+  color: white;
+  font-size: 40px;
+}
+
 body {
   min-height: 100vh;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
+  text-align: center;
 }
 
 a {
@@ -21,6 +26,7 @@ a {
 
 img {
   max-width: 300px;
+  max-height: 100px;
 }
 
 .flight-index {
@@ -37,4 +43,7 @@ img {
 .flight-table {
   position: absolute;
   bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
 }
