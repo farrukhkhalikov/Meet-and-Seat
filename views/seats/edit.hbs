@@ -32,10 +32,9 @@
 </div>
 
 <div class="card">
-
     <h2>Edit seat Profile</h2>
     <div>
-        <form action="/seats/{{seat._id}}" method="POST">
+        <form action="/flights/{{flightId}}/seats/{{seat._id}}" method="POST">
             <div class="form-input">
                 <label for="seatname">seatname:</label>
                 <input type="text" name="seatname" value="{{seat.seatname}}" required/>

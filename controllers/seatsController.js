@@ -61,6 +61,7 @@ router.get('/:id', (req, res) => {
     Flight.findById(req.params.flightId).then((flight) => {
      var seat = flight.seats.id(req.params.id)
         res.render('seats/edit', {
+            flightId: req.params.flightId,
             seat: seat
         })
     })
@@ -71,7 +72,7 @@ router.get('/:id', (req, res) => {
    
 
         //user delete
-        router.get('/:id/delete', (request, response) => {
+        router.get('/:id', (request, response) => {
             Flight.findById(req.params.flightId).then((flight) => {
 
                 const seatIdToDelete = request.params.id;

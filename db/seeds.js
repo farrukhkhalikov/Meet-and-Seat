@@ -35,13 +35,20 @@ var flightSeats = new Seats({
     users: [steve, ryan] //This isn't working
   })
 
+  const seat1 = new Seats({
+    row: "5B",
+    seat: [1, 2, 3, 4, 5, 6, 7, 8, 9], //This isn't in your schema?
+    users: [steve]
+
+  })
+
 const flight = new Flight({
     name: "KLM Dutch Royal Airlines",
     info: "Amsterdam",
     img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KLM_logo.svg/1200px-KLM_logo.svg.png",
     arrival: 1445,
     departure: 0900,
-    seats: [flightSeats]
+    seats: [flightSeats, seat1]
 })
 const flight2 = new Flight({
     name: "Delta",
@@ -49,7 +56,7 @@ const flight2 = new Flight({
     img: "https://i.imgur.com/ExkgKNT.png",
     arrival: 1315,
     departure: 1800,
-    seats: [flightSeats]
+    seats: [flightSeats, seat1]
 })
 const flight3 = new Flight({
     name: "British Airways",
@@ -57,7 +64,7 @@ const flight3 = new Flight({
     img: "http://www.stickpng.com/assets/images/587b50af44060909aa603a7b.png",
     arrival: 0930,
     departure: 1700,
-    seats: [flightSeats]
+    seats: [flightSeats, seat1]
 })
 const flight4 = new Flight({
     name: "France Airways",
@@ -65,7 +72,7 @@ const flight4 = new Flight({
     img: "https://us-res.france.fr/rwb/2015/site/img/af-skyteam.png",
     arrival: 1130,
     departure: 2100,
-    seats: [flightSeats]
+    seats: [flightSeats, seat1]
 })
 User.remove().then(() => {
     return Seats.remove().then(() => {
