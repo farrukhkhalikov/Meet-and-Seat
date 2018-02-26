@@ -1,6 +1,5 @@
 require('dotenv').config()
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/API-practice')
 var User = require('../models/user')
 var Flight = require('../models/flight')
 var Seats = require('../models/seats')
