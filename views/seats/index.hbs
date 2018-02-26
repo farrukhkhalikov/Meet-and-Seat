@@ -20,8 +20,9 @@
 
         <h2>Flight Seats</h2>
         {{#each seats}}
+        <div class="seats">
         <h3>{{row}}</h3>
-        <a href="/flights/{{../flight._id}}/seats/{{_id}}/edit">Edit Seats</a>
+        <a href="/flights/{{../flight._id}}/seats/{{_id}}/edit">Edit Seat</a>
         </div>
         {{/each}}
         {{!-- <div style="overflow-x:auto;">

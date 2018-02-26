@@ -19,7 +19,6 @@ var userSchema = new Schema({
 var seatSchema = new Schema({
     row: String,
     seat: [Number],
-    img: String,
     users: [userSchema]
   })
 

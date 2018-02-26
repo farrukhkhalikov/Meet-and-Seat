@@ -19,31 +19,34 @@ router.get('/', (req, res) => {
     })
 })
 
-
+//create new seat
 router.post('/', (req, res) => {
 
-    // Get company we need to save soda to
+    // Get Flight we need to save seat to
     Flight.findById(req.params.flightId).then((flight) => {
-  
-      // THEN once we have the company, take req.body and make a new Soda
-      const newSeat = new Seat({
-        seat: seat,
-        user: user
-      })
-  
-      // Push Soda to company.sodas
-      flight.seats.push(newSeat)
-  
-      // Save Company
-      return flight.save()
-    }).then((updatedFlight) => {
-  
-      // Redirect to all sodas
-      res.redirect(`/flights/${req.params.flightId}/seats`)
-    })
-  })
 
-  /// show route
+        // THEN once we have the Flight, take req.body and make a new seat
+        const newSeat = new Seat({
+            seat: seat,
+            user: user
+        })
+
+        // Push seat to Flight.seats
+        flight.seats.push(newSeat)
+
+        // Save Flight
+        return flight.save()
+    }).then((updatedFlight) => {
+
+        // Redirect to all seats
+        res.redirect(`/flights/${req.params.flightId}/seats`)
+    })
+})
+
+
+
+
+/// show route
 //flight id and seat id
 router.get('/:id', (req, res) => {
     Flight.findById(req.params.flightId).then((flight) => {
@@ -54,12 +57,14 @@ router.get('/:id', (req, res) => {
             })
         })
     })
-  
+})
 
-   /// route
-   router.get('/:id/edit', (req, res) => {
+//put OR patch for updating existing seats
+
+/// route
+router.get('/:id/edit', (req, res) => {
     Flight.findById(req.params.flightId).then((flight) => {
-     var seat = flight.seats.id(req.params.id)
+        var seat = flight.seats.id(req.params.id)
         res.render('seats/edit', {
             flightId: req.params.flightId,
             seat: seat
@@ -67,24 +72,53 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.patch('/:id', (req, res) => {
+    console.log("HITTING MY SEAT PATCH METHOD")        
+    console.log("Current Flight ID used for query:", req.params)
 
-
-   
-
-        //user delete
-        router.get('/:id', (request, response) => {
-            Flight.findById(req.params.flightId).then((flight) => {
-
-                const seatIdToDelete = request.params.id;
-
-                Seat.findByIdAndRemove(seatIdToDelete).then(() => {
-                    console.log(`Successfully deleted user with ID ${seatIdToDelete}!`);
-
-                    response.redirect('/seats');
-                });
-            });
-        })
+    Flight.findById(req.params.flightId).then((flight) => {
+        console.log("Current Flight:", flight)
+  
+      // We don't have a nice method like findByIdAndUpdate here
+      // so instead we need to manually change the seats values
+      const seat = flight.seats.id(req.params.id)
+      console.log(seat)
+      seat.row = req.body.row
+            
+      // Then Save the Flight
+      return flight.save()
+    }).then((updatedflight) => {
+      res.redirect(`/flights/${req.params.flightId}/seats/`)
+    }).catch((err) => {
+        console.log(err)
     })
+  })
+
+
+
+// delete
+router.delete('/:id', (request, response) => {
+    console.log('here from the delete route')
+    Flight.findById(request.params.flightId).then((flight) => {
+
+        const seatIdToDelete = request.params.id;
+        console.log('hit the delete ',seatIdToDelete)
+
+        flight.seats.id(seatIdToDelete).remove()
+        return flight.save()
+        
+        
+        
+        
+        })
+
+        .then(() => {
+            console.log(`Successfully deleted user!`);
+
+            response.redirect(`/flights/${request.params.flightId}/seats/`);
+    });
+})
+
 
 
 module.exports = router
