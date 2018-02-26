@@ -1,4 +1,4 @@
-<h1>Edit Soda</h1>
+{{!-- <h1>Edit Soda</h1>
 <form method="POST" action="/flights/{{flightId}}/seats/{{seat._id}}?_method=PATCH">
  {{!-- <div>
     <label for="name">Name of Soda</label>
@@ -19,9 +19,52 @@
     <label for="quantitySold">Quantity Sold</label>
     <input type="text" name="quantitySold" value="{{soda.quantitySold}}">
   </div> --}}
-  
+{{!--   
   <button type="submit">Edit</button>
   
 
 </form>
-<a href="/flights/{{flightId}}/seats/{{seat._id}}">Go Back</a>
+<a href="/flights/{{flightId}}/seats/{{seat._id}}">Go Back</a> --}} 
+
+<div class="stepper">
+    <a href="/seats">Home</a> /
+    <a href="/seats/{{seat._id}}">Profile</a> / Edit Profile
+</div>
+
+<div class="card">
+
+    <h2>Edit seat Profile</h2>
+    <div>
+        <form action="/seats/{{seat._id}}" method="POST">
+            <div class="form-input">
+                <label for="seatname">seatname:</label>
+                <input type="text" name="seatname" value="{{seat.seatname}}" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="email">Email:</label>
+                <input type="text" name="email" value="{{seat.email}}" />
+            </div>
+
+            <div class="form-input">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" value="{{seat.firstName}}" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" value="{{seat.lastName}}" required/>
+            </div>
+
+            <div class="form-input">
+                <label for="photoUrl">Photo Url:</label>
+                <input type="text" name="photoUrl" value="{{seat.photoUrl}}" />
+            </div>
+
+            <div class="button-container flex-end">
+                <input class="button primary" type="submit" value="Update Profile">
+                <a href="/seats/{{seat._id}}" class="button warning">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>

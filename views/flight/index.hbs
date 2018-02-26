@@ -1,15 +1,15 @@
 <h1>Flights</h1>
 
-
+<div class="flight-index">
 {{#each flights}}
-    <div>
+    <div class="flight-box">
+        <img src="{{this.img}}" alt="{{this.name}}">
+       
+        
         <div>Name: {{this.name}}</div>
-        {{!-- --}}
     
         <a href="/flights/{{this._id}}">Show {{this.name}}</a>
-        {{!-- <a href="/flights/{{this._id}}/delete">Delete {{this.info}}</a> --}}
-        {{!-- <a href="/flights/{{this._id}}/edit">Edit {{this.name}}</a> --}}
+        
     </div>
 {{/each}}
-
-{{!-- <div><a href="/flights">Show Seats</a></div> --}}
+</div>

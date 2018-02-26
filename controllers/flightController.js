@@ -11,6 +11,7 @@ var Seat = require('../models/seats')
 ///index route
 router.get('/', (req, res) => {
  Flight.find().then((flights) => {
+     console.log(flights)
      res.render('flight/index', {
          flights: flights
      })

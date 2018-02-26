@@ -34,7 +34,7 @@ app.use('/flights/:flightId/seats', seatsController)
 
 
 var db = mongoose.connection
-mongoose.connect('mongodb://localhost/API-practice')
+mongoose.connect(process.env.MONGODB_URI)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,20 +1,88 @@
-<h1>Seats</h1>
-<p>Name: {{name}}</p>
-<p>Seat: {{id}}</p>
+<div class="flight-table">
+    <h1>Seats</h1>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            color: #f2f2f2;
+        }
 
-{{!-- {{#each seats}}
-    <div>
-        <div>Name: {{first_name}}</div>
-        <div>Email: {{info}}</div>
-        
-        {{!-- <a href="/seats/{{this._id}}">Show {{this.id}}</a> --}}
-        {{!-- <a href="/seats/{{this._id}}/delete">Delete {{this.flight}}</a> --}}
-        {{!-- <a href="/seats/{{this._id}}/edit">Edit {{this.user}}</a> --}}
-    {{!-- </div>
-{{/each}} --}} 
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
 
-{{!-- {{#each seats}} --}}
-{{!-- <div>{{_id}}<a href="/flights/{{../flight._id}}/seats/{{_id}}/edit">Edit Seats</a></div> --}}
+        {{!-- {{!-- tr:nth-child(even) {
+            background-color: #f2f2f2
+        }  --}}
+    </style>
+    </head>
 
-<div>{{_id}}<a href="./seats/{{_id}}/edit">Edit Seats</a></div>
-{{!-- {{/each}} --}}
+    <body>
+
+        <h2>Flight Seats</h2>
+
+
+        <div style="overflow-x:auto;">
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <th>Row - A</th>
+                    <th>Row - B</th>
+                    <th>Row - C</th>
+                    <th>Row - D</th>
+                    <th>Row - E</th>
+                    <th>Row - F</th>
+                    <th>Row - G</th>
+                    <th>Row - H</th>
+                    <th>Row - I</th>
+                    <th>Row - J</th>
+                </tr>
+                <tr>
+                    <td>Jill</td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>Eve</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                </tr>
+                <tr>
+                    <td>Adam</td>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div>{{_id}}
+            <a href="./seats/{{_id}}/edit">Edit Seats</a>
+        </div>
+</div>

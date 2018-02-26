@@ -19,6 +19,7 @@ var userSchema = new Schema({
 var seatSchema = new Schema({
     row: String,
     seat: [Number],
+    img: String,
     users: [userSchema]
   })
 
@@ -26,6 +27,7 @@ var seatSchema = new Schema({
 var flightSchema = new Schema({
     name: String,
     info: String,
+    img: String,
     arrival: Number,
     departure: Number,
     seats: [seatSchema]

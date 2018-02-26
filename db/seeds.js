@@ -38,6 +38,7 @@ var flightSeats = new Seats({
 const flight = new Flight({
     name: "KLM Dutch Royal Airlines",
     info: "Amsterdam",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/KLM_logo.svg/1200px-KLM_logo.svg.png",
     arrival: 1445,
     departure: 0900,
     seats: [flightSeats]
@@ -45,6 +46,7 @@ const flight = new Flight({
 const flight2 = new Flight({
     name: "Delta",
     info: "Frankfurt",
+    img: "https://i.imgur.com/ExkgKNT.png",
     arrival: 1315,
     departure: 1800,
     seats: [flightSeats]
@@ -52,6 +54,7 @@ const flight2 = new Flight({
 const flight3 = new Flight({
     name: "British Airways",
     info: "London",
+    img: "https://vignette.wikia.nocookie.net/logopedia/images/a/a3/British-airways-logo.jpg/revision/latest?cb=20150131170343",
     arrival: 0930,
     departure: 1700,
     seats: [flightSeats]
@@ -59,17 +62,17 @@ const flight3 = new Flight({
 const flight4 = new Flight({
     name: "France Airways",
     info: "Paris",
+    img: "https://s-media-cache-ak0.pinimg.com/originals/30/82/40/308240d64c83f2f17767b2c5127cb40b.jpg",
     arrival: 1130,
     departure: 2100,
     seats: [flightSeats]
 })
 User.remove().then(() => {
     return Seats.remove().then(() => {
-        return Flight.remove().then(() => {
-        })
+        return Flight.remove()
     })
 }).then(() => {
-    console.log(flight)
+    //console.log(flight)
     Flight.insertMany([flight, flight2, flight3, flight4]).then(()=> {
         console.log('saved worked')
     })
